@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url_api: "http://localhost:3000",
+  url_api: "https://8bfd-187-105-33-117.ngrok-free.app/",
+  // url_api: "http://localhost:3000",
 };
 
 /*
