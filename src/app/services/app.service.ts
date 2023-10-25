@@ -24,14 +24,17 @@ export class AppService {
   private user = new BehaviorSubject<LoginRequest>(null);
   currentUser = this.user.asObservable();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
-  setAppAlerts(alerts: AppAlert[], timeoutMs = 5000) {
+  setAppAlerts(alerts: AppAlert[], timeoutMs = 2500) {
     if (!alerts) return;
 
     this._appAlerts.next(alerts);
 
-    if (alerts.length === 1) setTimeout(() => this.closeAppAlerts(), timeoutMs);
+    if (alerts.length === 1) setTimeout(() => {
+      this.closeAppAlerts();
+      this.setGlobalLoading(false)
+    }, timeoutMs);
   }
 
   closeAppAlert(index: number) {

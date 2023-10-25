@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  url_api: "https://118d-2804-29b8-5173-2f0-45b9-5ba6-984b-19ed.ngrok-free.app/",
-  // url_api: "http://localhost:3000",
+  url_api: 'https://dcreea-backend-production.up.railway.app',
 };
 
 /*

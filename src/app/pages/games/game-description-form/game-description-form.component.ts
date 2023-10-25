@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AppService } from "src/app/services/app.service";
+import { Router } from "@angular/router";
 import { GameService } from "src/app/services/game.service";
 import { getErrors } from "src/app/shared/helpers/get-message-errors";
 import { Game } from "src/app/shared/models/api";
@@ -12,7 +13,8 @@ import { Game } from "src/app/shared/models/api";
 export class GameDescriptionFormComponent implements OnInit {
   game: Game;
 
-  constructor(private gameService: GameService, private appService: AppService) {}
+  constructor(private gameService: GameService, private appService: AppService, private router: Router) {}
+  nextRoute = "/user/projects";
 
   ngOnInit(): void {
     this.clear();
@@ -44,6 +46,7 @@ export class GameDescriptionFormComponent implements OnInit {
         this.appService.setAppAlerts(getErrors(erros).map((error) => ({ message: error, type: "danger" })));
       }
     );
+    this.router.navigate([this.nextRoute]);
   }
 
   isValid(): string[] {

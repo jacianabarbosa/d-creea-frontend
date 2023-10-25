@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "6310c594-10d3-4c26-af9c-bc12fc954cee"
+    "analytics": "1c2f5322-dd04-459a-96ef-ca8a86f45391"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -67,15 +67,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "DCREAE-Front:build",
-            "disableHostCheck": true
+            "browserTarget": "DCREAE-Front:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "DCREAE-Front:build:production",
-            },
-            "development": {
-              "disableHostCheck": true
+              "browserTarget": "DCREAE-Front:build:production"
             }
           }
         },

@@ -82,13 +82,13 @@ export class ProjectsComponent implements OnInit {
     }
 
     this.gamesService.createGame(this.request).subscribe(
-      (res) => { 
+      (res) => {
         console.log("projects create game", res);
         if (!res) {
           this.appService.setAppAlerts([{ message: "Error while creating the game. Please, try again", type: "danger" }]);
         } else {
           var game: Game = mapg(res.game);
-          console.log("tá printando", game);
+
           game.decks = res.decks.map((d) => mapd(d));
           game.states = res.states;
 
@@ -96,13 +96,9 @@ export class ProjectsComponent implements OnInit {
           this.router.navigate(["/games/create"]);
         }
       },
-      
       (error) => {
-        this.openCreateGame = false;
-        this.gamesService.getGames(this.userLogin._id).subscribe((res)=>console.log(res));
-       
-        // console.log(error);
-        // this.appService.setAppAlerts(getErrors(error).map((error) => ({ message: error, type: "danger" })));
+        console.log(error);
+        this.appService.setAppAlerts(getErrors(error).map((error) => ({ message: error, type: "danger" })));
       }
     );
     this.appService.setGlobalLoading(false);
