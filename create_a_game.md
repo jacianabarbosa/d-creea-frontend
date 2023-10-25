@@ -5,11 +5,10 @@
 ![tela de login](src/assets/images/tela_login.png)
 
 ## 1. Criar jogo:
-No canto superior direito clique em ``Create New`` 
-
+No canto superior direito clique em ``Create New`` <br>
 Preencha a caixa que aparecerá com o nome do jogo
-![criar jogo](src/assets/images/create_a_game.png)
 Clique em ``ADD``
+![criar jogo](src/assets/images/create_a_game.png)
 
 ## 2. Personalizar jogo
 ![](src/assets/images/costumizar_jogo.png)
